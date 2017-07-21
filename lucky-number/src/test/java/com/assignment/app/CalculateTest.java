@@ -10,6 +10,7 @@ package com.assignment.app;
 
 import com.assignment.calculate.Calculate;
 import com.assignment.generate.Player;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -45,4 +46,10 @@ public class CalculateTest {
         player.setLuckyValue(40);
         assertEquals(false, Calculate.calculateWin(player).isWinStatus());
     }
+
+    @After
+    public void executeAfterMethod(){
+        System.out.println("This is executed after the test");
+    }
+
 }
