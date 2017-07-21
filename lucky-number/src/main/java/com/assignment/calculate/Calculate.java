@@ -1,17 +1,32 @@
+/*
+ * Calculate
+ *
+ * version 1.0.0.0
+ *
+ * Last Edit 21/07/17
+ */
+
 package com.assignment.calculate;
 
 import com.assignment.generate.Player;
 import com.assignment.generate.RandowNumberGenerator;
 
 /**
- * Created by hashan on 7/21/17.
+ * This compares the random number and the given user value.
  */
+
 public class Calculate {
-    private static int MAX_AMOUNT = 100;
-    private static int MIN_AMOUNT = 10;
+
+
+
+    /**
+     * Compares the random number with user value and returns the player with results
+     * @param newPlayer
+     * @return Player
+     */
     public static Player calculateWin(Player newPlayer){
-        int randomNumber = RandowNumberGenerator.getRandomNumber(MAX_AMOUNT, MIN_AMOUNT);
-        if(isPlayerWon(newPlayer, randomNumber)){
+
+        if(isPlayerWon(newPlayer, newPlayer.getLuckyValue())){
             newPlayer.setWinStatus(true);
         } else {
             newPlayer.setWinStatus(false);
@@ -20,6 +35,12 @@ public class Calculate {
         return newPlayer;
     }
 
+    /**
+     * Compare two numbers
+     * @param newPlayer
+     * @param randomNumber
+     * @return boolean
+     */
     private static boolean isPlayerWon(Player newPlayer, int randomNumber) {
         return newPlayer.getPlayerValue() == randomNumber;
     }
